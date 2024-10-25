@@ -8,14 +8,23 @@ const durationTimeDisplay = document.getElementById('durationTime');
 const progressBar = document.getElementById('progressBar');
 const controls = document.querySelector('.controls');
 let hideControlsTimeout;
+const mainPlayBtn =  document.querySelector('.mainPlay');
+
+mainPlayBtn.addEventListener('click', ()=>{
+        video.play();
+        playBtn.src = 'img/pause.svg'; 
+        mainPlayBtn.style.display = "none";
+})
 
 playBtn.addEventListener('click', () => {
     if (video.paused) {
         video.play();
         playBtn.src = 'img/pause.svg'; 
+        mainPlayBtn.style.display = "none";
     } else {
         video.pause();
         playBtn.src = 'img/play.svg'; 
+        mainPlayBtn.style.display = "block";
     }
 });
 
@@ -31,7 +40,7 @@ fullscreenBtn.addEventListener('click', () => {
         setTimeout(hideControls, 4000);
     } else {
         document.exitFullscreen();
-        controls.classList.remove('hidden');   
+        controls.classList.remove('hidden');  
     }
 });
 
