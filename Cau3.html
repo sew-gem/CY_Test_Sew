@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cau 3</title>
+    <style>
+        .container {
+            margin: 0 auto;
+            width: 500px;
+            height: 300px;
+            border: 2px solid black;
+            position: relative
+        }
+        .box {
+            width: 50px;
+            height: 50px;
+            background: red;
+            position: absolute;
+            transition: all 1s ease;
+        }
+        .circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 45px;
+            background: rgb(68, 68, 128);
+            color: white;
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+        <div class="circle">?</div>
+    </div>
+</body>
+
+<script>
+    function moveBox(position) {
+        return new Promise((resolve) => {
+            const box = document.querySelector('.box');
+            box.style.top = position.top;
+            box.style.left = position.left;
+            setTimeout(resolve, 2000);
+        });
+    }
+    async function animateBox() {
+        await moveBox({ top: '0px', left: '0px' });
+        await moveBox({ top: '0px', left: '450px' });
+        await moveBox({ top: '250px', left: '450px' }); 
+        await moveBox({ top: '250px', left: '0px' }); 
+        await moveBox({ top: '0px', left: '0px' }); 
+        }
+        animateBox(); 
+</script>
+</html>

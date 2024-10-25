@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Cau4.css">
+</head>
+
+<body>
+    <div class="container" id="container">
+        <!-- video  -->
+        <video id="video" width="600">
+            <source src="img/adudio/lovely.mp4" type="video/mp4">
+        </video>
+
+         
+        
+        
+        <!-- controller  -->
+        <div class="controls">
+            <div class="title">
+                <p class="artist">Lovely</p>
+                <p>Billie Eilish, Khalid</p>
+            </div>
+            <div class="time">
+                <span id="currentTime">0:00</span>
+                <span id="durationTime">0:00</span>
+            </div>
+            <input type="range" id="progressBar" value="0" max="100">
+            <div id="buttonControl">
+                <div>
+                    <button>
+                        <img id="playPause" src="img/play.svg" alt="">
+                    </button>
+                    <button>
+                        <img id="previous" src="img/prev.svg" alt="">
+                    </button>
+                    <button>
+                        <img id="next" src="img/next.svg" alt="">
+                    </button>
+                </div>
+                <div>
+                    <button>
+                        <img id="muteToggle" src="img/volume.svg" alt="">
+                    </button>
+                    <button>
+                        <img id="fullscreenToggle" src="img/zoom.svg" alt="">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="Cau4.js"></script>
+</body>
+
+</html>
